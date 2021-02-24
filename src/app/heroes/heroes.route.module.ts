@@ -11,13 +11,17 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         children: [
-            { path: 'list', component: ListComponent },
+            { 
+                path: 'list', 
+                component: ListComponent 
+            },
             {
                 path: 'add',
                 component: AddComponent,
             },
             {
                 path: 'edit/:id',
+                component: AddComponent,
             },
             {
                 path: 'search',

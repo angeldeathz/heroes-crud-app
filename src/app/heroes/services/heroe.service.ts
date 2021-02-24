@@ -18,4 +18,13 @@ export class HeroeService {
     return this.client.get<Heroe[]>(url);
   }
 
+  public getById(id: string): Observable<Heroe> {
+    const url = environment.urlApi + "heroes/" + id
+    return this.client.get<Heroe>(url);
+  }
+
+  public getByQuery(query: string): Observable<Heroe[]> {
+    const url = environment.urlApi + "heroes?q=" + query
+    return this.client.get<Heroe[]>(url);
+  }
 }

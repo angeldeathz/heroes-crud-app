@@ -6,9 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ImagePipe implements PipeTransform {
 
   transform(value: string): string {
-
-    console.log(value);
-
     let url: string = "assets/images/no-image.png";
 
     if (value) {
