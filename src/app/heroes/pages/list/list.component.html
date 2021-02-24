@@ -1,47 +1,14 @@
 <h1>Heros List</h1>
 <mat-divider></mat-divider>
-<br/>
+<br />
 
-<div 
-    fxLayout="row wrap"
-    fxLayout.xs="column"
-    fxLayoutAlign="center" fxLayoutGap="20px"
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="20px"
 >
-    
-    <div 
-        fxFlex="20"
-        fxFlex.lg="15"
-        fxFlex.sm="30"
-        *ngFor="let hero of heroes"
-    >
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>{{hero.superhero}}</mat-card-title>
-                <mat-card-subtitle>{{hero.alter_ego}}</mat-card-subtitle>
-            </mat-card-header>
-        
-            <img mat-card-image src="assets/images/{{hero.id}}.jpg" alt="" srcset="">
-        
-            <mat-card-content>
-                <h3>{{hero.publisher}}</h3>
-                <p>
-                    <strong>First Appearance</strong> {{hero.first_appearance}}
-                    <br/>
-                    <strong>Characters</strong> {{hero.characters}}
-                </p>
-            </mat-card-content>
-        
-            <mat-card-actions>
-                <button mat-button color="warn">
-                    See more...
-                </button>
-        
-                <button mat-button color="info">
-                    Edit
-                </button>
-            </mat-card-actions>
-        
-        </mat-card>
-    </div>
-
+  <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30" *ngFor="let heroe of heroes">
+    <app-hero-card [heroe]="heroe"></app-hero-card>
+  </div>
 </div>
