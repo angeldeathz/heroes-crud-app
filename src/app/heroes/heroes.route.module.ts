@@ -4,37 +4,39 @@ import { ListComponent } from './pages/list/list.component';
 import { AddComponent } from './pages/add/add.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
     {
-        path: "",
+        path: '',
+        component: HomeComponent,
         children: [
+            { path: 'list', component: ListComponent },
             {
-                path: "list",
-                component: ListComponent
+                path: 'add',
+                component: AddComponent,
             },
             {
-                path: "add",
-                component: AddComponent
+                path: 'edit/:id',
             },
             {
-                path: "edit/:id"
+                path: 'search',
+                component: SearchComponent,
             },
             {
-                path: "search",
-                component: SearchComponent
+                path: ':id',
+                component: HeroeComponent,
             },
-            {
-                path: ":id",
-                component: HeroeComponent
-            }
-        ]
-    }
+        ],
+    },
 ];
 
 @NgModule({
     imports: [
         RouterModule.forChild(routes)
+    ],
+    exports: [
+        RouterModule
     ]
 })
 export class HeroesRoutesModule { }

@@ -6,6 +6,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
 import { HeroesRoutesModule } from './heroes.route.module';
 import { HeroeComponent } from './pages/heroe/heroe.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
   ],
   imports: [
     CommonModule,
-    HeroesRoutesModule
+    HeroesRoutesModule,
+    FlexLayoutModule,
+    MaterialModule
   ],
   exports: [
     HeroesRoutesModule
