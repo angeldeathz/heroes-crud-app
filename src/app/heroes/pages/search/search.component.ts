@@ -21,7 +21,6 @@ export class SearchComponent implements OnInit {
   }
 
   public searchHero() {
-    console.log("a-", this.query);
     this.heroService.getByQuery(this.query).subscribe(heroes => {
       this.heroes = heroes;
 

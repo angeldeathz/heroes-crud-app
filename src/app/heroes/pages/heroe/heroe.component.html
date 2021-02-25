@@ -7,7 +7,7 @@
     <h1>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h1>
     <mat-divider></mat-divider>  
     <br>
-    <img [src]="heroe.id | image">
+    <img [src]="heroe | image">
   </div>
   <div fxFlex="50">
     <h1>{{heroe.publisher}}</h1>
@@ -21,7 +21,7 @@
 
     <br>
 
-    <button mat-button color="warn" routerLink="/heroes/list">Regresar</button>
+    <button mat-raised-button color="warn" routerLink="/heroes/list">Regresar</button>
   </div>
 </div>
 
