@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthService } from './auth/guards/auth.service';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
@@ -9,7 +10,8 @@ const routes: Routes = [
     },
     {
       path: "heroes",
-      loadChildren: () => import("./heroes/heroes.module").then(m => m.HeroesModule)
+      loadChildren: () => import("./heroes/heroes.module").then(m => m.HeroesModule),
+      // canActivate: [AuthService]
     },
     {
       path: "404",
