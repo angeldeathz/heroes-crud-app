@@ -1,0 +1,14 @@
+<h1>Are you sure?</h1>
+<hr />
+<p>You will delete the hero {{data.superhero}}</p>
+
+<br />
+
+<div fxLayout="row" fxLayoutGap="10px">
+  <button mat-raised-button color="primary" (click)="confirm()" fxFlex="50">
+    Confirm
+  </button>
+  <button mat-raised-button color="warn" (click)="cancel()" fxFlex="50">
+    Cancel
+  </button>
+</div>

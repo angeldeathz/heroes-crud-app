@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Heroe } from '../../interfaces/heroe';
 import { HeroeService } from '../../services/heroe.service';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 
 @Component({
   selector: 'app-add',
@@ -43,6 +44,7 @@ export class AddComponent implements OnInit {
   }
 
   public saveHeroe() {
+
     if (
       this.heroe.superhero.trim().length === 0 ||
       this.heroe.alter_ego.trim().length === 0 ||
@@ -69,14 +71,21 @@ export class AddComponent implements OnInit {
 
   public deleteHero(){
 
-    // this.dialog.open()
+    const dialog = this.dialog.open(DialogComponent, {
+      width: "250px",
+      data: this.heroe
+    });
 
-    if (this.heroe && this.heroe.id) {
-      this.heroeService.delete(this.heroe.id).subscribe(x => {
-        this.showSnakBar("Hero Deleted");
-        this.route.navigateByUrl("/heroes/list");
-      });
-    }
+    dialog.afterClosed().subscribe(x => {
+      if (x) {
+        if (this.heroe && this.heroe.id) {
+          this.heroeService.delete(this.heroe.id).subscribe(x => {
+            this.showSnakBar("Hero Deleted");
+            this.route.navigateByUrl("/heroes/list");
+          });
+        }
+      }
+    });
   }
 
   private showSnakBar(message: string): void {
