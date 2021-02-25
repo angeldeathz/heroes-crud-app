@@ -57,12 +57,12 @@ export class AddComponent implements OnInit {
     } else {
       if (this.heroe.id) {
         this.heroeService.put(this.heroe).subscribe(x => {
-          this.showSnakBar("Hero Updated");
+          this.showSnakBar("Heroe Updated");
           this.route.navigateByUrl("/heroes/" + x.id);
         });
       } else {
         this.heroeService.post(this.heroe).subscribe(x => {
-          this.showSnakBar("Hero Added");
+          this.showSnakBar("Heroe Added");
           this.route.navigateByUrl("/heroes/" + x.id);
         });
       }
@@ -80,7 +80,7 @@ export class AddComponent implements OnInit {
       if (x) {
         if (this.heroe && this.heroe.id) {
           this.heroeService.delete(this.heroe.id).subscribe(x => {
-            this.showSnakBar("Hero Deleted");
+            this.showSnakBar("Heroe Deleted");
             this.route.navigateByUrl("/heroes/list");
           });
         }

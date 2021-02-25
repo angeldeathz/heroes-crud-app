@@ -1,6 +1,6 @@
 <div fxLayout="column">
   <div fxFlex="50">
-    <h1>Search a Hero</h1>
+    <h1>Search a Heroe</h1>
     <mat-divider></mat-divider>
   </div>
   <br>
@@ -18,10 +18,10 @@
       />
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
         <mat-option
-          *ngFor="let hero of heroes"
-          [value]="hero"
+          *ngFor="let heroe of heroes"
+          [value]="heroe"
         >
-          {{ hero.superhero }}
+          {{ heroe.superhero }}
         </mat-option>
 
         <mat-option value="" *ngIf="heroNotFound && query.length > 0">
